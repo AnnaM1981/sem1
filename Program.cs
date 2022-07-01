@@ -335,10 +335,10 @@
 // Задача 4. Напишите программу которая выводит массив из 8 элементов заполненный нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 // Создаем массив случайных чисел, где size - количество элементов в массиве, min - начало диапазона случайных чисел, max - до какого генеририруем.
-// int[] CreateRandomArray(int size){
+// int[] CreateRandomArray(int size, int min, int max){
 //     int[] array = new int[size];
 //     for(int i = 0; i < size; i++){
-//         array[i] = new Random().Next(0,2);
+//         array[i] = new Random().Next(min,max+1);
 //     }
 //     return array;
 // }
@@ -400,3 +400,200 @@
 // int number = Convert.ToInt32(Console.ReadLine());
 // Console.WriteLine("Sum of elements is " + sumToNum(number));
 
+// Семинар 5.
+// Примеры форматирования (интерполяция)
+// string name = "Имя";
+// int age = 99;
+// Console.WriteLine("Имя: {0} Возраст: {1}", name, age);
+
+// Форматирование дробного числа (f - количество символов после запятой)
+// double number = 45.08;
+// string result = string.Format("{0:f1}",number);
+// Console.WriteLine(result);
+
+// Форматирование с математическими действиями
+// int x = 8;
+// int y = 7;
+// string result = $"{x} + {y} = {x + y}";
+// Console.WriteLine(result);
+
+// Форматирование с пробелами
+// string name = "Имя";
+// int age = 99;
+// Console.WriteLine($"Имя: {name, -10} Возраст: {age}"); //пробелы после
+// Console.WriteLine($"Имя: {name, 15} Возраст: {age}"); //пробелы до
+
+// Задача 1.
+// Задайте массив из 12 элементов, заполненный случайными числами из промежутка [-9,9]. Найти сумму отрицательных и положительных элементов массива.
+// int[] CreateRandomArray(int size, int min, int max){
+//     int[] array = new int[size];
+//     for(int i = 0; i < size; i++){
+//         array[i] = new Random().Next(min,max+1);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+// int[] myArray = CreateRandomArray(12, -9, 9);
+// ShowArray(myArray);
+
+// int sum_pos = 0;
+// int sum_neg = 0;
+
+// for (int i = 0; i < myArray.Length; i++)
+// {
+//     if(myArray[i] > 0)
+//         sum_pos += myArray[i];
+//     else
+//         sum_neg += myArray[i];
+
+// } 
+// Console.WriteLine($"Сумма положительных: {sum_pos}. Сумма отрицательных: {sum_neg}");
+
+// Задача 2. Напишите программу замена элементов массива: положительные элементы замените на соответствующие отрицательные и наоборот.
+// [-4,-8,8,2]->[4,8,-8,-2]
+
+// int[] CreateRandomArray(int size){
+//     int[] array = new int[size];
+//     for(int i = 0; i < size; i++){
+//         array[i] = new Random().Next(-100,101);
+//     }
+//     return array;
+//     }
+
+// int[] GetArray(int[]array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         array[i] = array[i] * (-1); //как 1 вариант
+//         array[i]*=-1;              //как 2 вариант
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+// int[] array = CreateRandomArray(4);
+// ShowArray(array);
+// Console.WriteLine();
+// ShowArray(GetArray(array));
+
+
+// Задача 3. Задайте массив. Напишите программу, которая определяет, присутствует ли заднное число в массиве.
+// 4; [6,7,19,345,3] -> нет
+// -3; [6,7,19,345,3] -> да
+// int[] CreateRandomArray(int size){
+//     int[] array = new int[size];
+//     for(int i = 0; i < size; i++){
+//         array[i] = new Random().Next(0,100);
+//     }
+//     return array;
+//     }
+// int[] MyArray = CreateRandomArray(8);
+
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// ShowArray(MyArray);
+
+// int ArrayCheck(int[] array)
+// {
+// for (int i = 0; i < MyArray.Length; i++)
+//     {
+//     if (MyArray[i] == 4)
+//         {
+//         return 1;
+//         }
+//     }
+//     return 0;
+// }
+//     if (ArrayCheck(MyArray) ==1)
+//     {
+//         Console.WriteLine(" Number is present");
+//     }
+//     else
+//     {
+//         Console.WriteLine(" Number is not present");
+//     }
+    
+// Домашняя работа (семинар 5)
+
+// Задача 2. Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
+// int[] RandomArray(int size)
+// {
+//     int[] array = new int(size);
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(1, 20);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+
+// int[]MyArray = RandomArray(6);
+// ShowArray (MyArray);
+
+// void SumOddPositionsInArray (int[]array)
+// {
+//     int result = 0;
+
+//     for (int i = 1; i < array.Length; i= i + 2)
+//     {
+//         result = result + array[i];
+//     }
+//     Console.WriteLine("The sum is " + result);
+// }
+// SumOddPositionsInArray (MyArray);
+
+// Задача 1. Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+// int[] RandomArray(int size)
+// {
+//     int[] array = new int(size);
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(1, 20);
+//     }
+//     return array;
+// }
+// void ShowArray (int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.WriteLine(array[i] + " ");
+//     }
+// }
+// int[] MyArray = RandomArray(10);
+// ShowArray(MyArray);
+
+// void EvenNumberInArray(int[] array)
+// {
+//     int count = 0;
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         if (array[i] % 2 ==0)
+//         count++;
+//     }
+//     Console.WriteLine("Even number count is " + count);
+// }
+// EvenNumberInArray(MyArray);
