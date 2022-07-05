@@ -597,3 +597,58 @@
 //     Console.WriteLine("Even number count is " + count);
 // }
 // EvenNumberInArray(MyArray);
+
+// Семинар 6. Двумерные массивы и рекурсия
+// Задача 1. Напишите программу, которая перевернет одномерный массив
+// int[] RandomArray(int size){
+//     int[] array = new int[size];
+//     for(int i = 0; i < size; i++){
+//         array[i] = new Random().Next(100, 1000);
+//     }
+//     return array;
+// }
+// void ShowArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++){
+//         Console.Write(array[i] + " ");
+//     }
+//     Console.WriteLine();
+// }
+// void SwapArray(int[] array)
+// {
+//     int buf = 0;
+//     for (int i = 0; i < array.Length/2; i++)
+//     {
+//         buf = array[i];
+//         array[i] = array[array.Length - i - 1];
+//         array[array.Length - i - 1] = buf;
+//     }
+//     ShowArray(array);
+// }
+// Console.Write("Введите размер массива: ");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int [] arr = RandomArray(size);
+// ShowArray(arr);
+// Console.WriteLine();
+// SwapArray(arr);
+
+// Домашняя работа (семинар 6)
+// Задача. Не используя рекурсию, выведите первые N чисел Фибоначчи. 
+
+int[] arr = new int[10];
+
+arr[0] = arr[1] = 1;
+
+int i = 2;
+
+while (i < arr.Length)
+{
+    arr[i] = arr[i-1]+arr[i-2];
+
+    Console.Write(arr[i++]);
+}
+
+
+
+
+
