@@ -635,18 +635,110 @@
 // Домашняя работа (семинар 6)
 // Задача. Не используя рекурсию, выведите первые N чисел Фибоначчи. 
 
-int[] arr = new int[10];
+// int[] arr = new int[10];
 
-arr[0] = arr[1] = 1;
+// arr[0] = arr[1] = 1;
 
-int i = 2;
+// int i = 2;
 
-while (i < arr.Length)
-{
-    arr[i] = arr[i-1]+arr[i-2];
+// while (i < arr.Length)
+// {
+//     arr[i] = arr[i-1]+arr[i-2];
 
-    Console.Write(arr[i++]);
-}
+//     Console.Write(arr[i++]);
+// }
+
+// Семинар 7.
+// Задача 1.
+// int[,] CreateRandomArray(int m, int n, int min, int max){
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         array[i,j] = new Random().Next(min,max+1);
+//     }
+//     return array;
+// }
+// void ShowArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++){
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i,j] + " ");
+//         }
+//     Console.WriteLine();
+//     }
+   
+// }
+
+// int[,] myArray = CreateRandomArray(3, 4, 1, 10);
+// ShowArray(myArray); 
+
+// Задача 2.
+// int[,] CreateArray(int m, int n){
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         array[i,j] = i+j;
+//     }
+//     return array;
+// }
+// void ShowArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++){
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i,j] + " ");
+//         }
+//     Console.WriteLine();
+//     }
+// }
+// Console.WriteLine("Enter number of rows: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Enter number of columns: ");
+// int columns = Convert.ToInt32(Console.ReadLine());
+
+
+// int[,] myArray = CreateArray(rows, columns);
+// ShowArray(myArray);
+
+
+// Домашняя работа (семинар 7)
+// Задача 1. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+// double[,] GetArray(int m, int n, int min, int max){
+//     double[,] result = new double[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//             {
+//             result[i, j] = new Random().NextDouble()*(max-min);
+//             }
+//      }
+//     return result;
+// }
+// void PrintArray(double[,] inArray)
+// {
+//     for (int i = 0; i < inArray.GetLength(0); i++){
+//         for (int j = 0; j < inArray.GetLength(1); j++)
+//         {
+//             Console.Write($"{array[i,j]:f1}");
+//         }
+//     Console.WriteLine();
+//     }
+   
+// }
+
+// Console.WriteLine("Введите количество строк: ");
+// int rows =  int.Parse(Console.ReadLine());
+// Console.WriteLine("Введите количество столбцов: ");
+// int columns = int.Parse(Console.ReadLine());
+
+
+// double[,] myArray = GetArray(rows, columns, 0, 10);
+// PrintArray(myArray);
+
+
 
 
 
