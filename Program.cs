@@ -795,3 +795,102 @@
 // {
 //     Console.WriteLine ("Число не является палиндромом!");
 // }
+// Семинар 8.
+// Задача. Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
+
+// int[,] CreateRandomArray(int m, int n, int min, int max){
+//     int[,] array = new int[m, n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         array[i,j] = new Random().Next(min,max+1);
+//     }
+//     return array;
+// }
+// void ShowArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++){
+//         for (int j = 0; j < array.GetLength(1); j++)
+//         {
+//             Console.Write(array[i,j] + " ");
+//         }
+//     Console.WriteLine();
+//     }
+   
+// }
+// void SwapArray(int[,] array)
+// {
+//     int buf = 0;
+//     int lastRow = array.GetLength(0) - 1;
+//     for (int column = 0; column < array.GetLength(1); column++)
+//     {
+//         buf = array[0, column];
+//         array[0, column] = array[lastRow, column];
+//         array[lastRow, column] = buf;
+//     }
+//     ShowArray(array);
+
+// }
+
+// int[,] myArray = CreateRandomArray(3, 4, 1, 10);
+// ShowArray(myArray); 
+// Console.WriteLine();
+// SwapArray(myArray);
+// ShowArray(myArray); 
+
+// Домашняя работа (к семинару 8)
+// Задача. Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
+
+// int[,] GetArray(int m, int n, int min, int max)
+// {
+//     int[,] result = new int [m,n];
+//     for (int i = 0; i < m; i++)
+//     {
+//         for (int j = 0; j < n; j++)
+//         {
+//             result[i, j] = new Random().Next(min,max + 1);
+//         }
+//     }
+//     return result;
+// }
+
+// void PrintArray(int[,] inArray)
+// {
+//     for (int i = 0; i < inArray.GetLength(0); i++)
+//     {
+//         for (int i = 0; j < inArray.GetLength(1); j++)
+//         {
+//             Console.Write($"{inArray[i,j]} ");
+//         }
+//         Console.WriteLine();
+//     }
+// }
+
+// void SortArray(int[,] array)
+// {
+//     for (int i = 0; i < array.GetLength(0); i++)
+//     {
+//         for (int i = 0; j < array.GetLength(1); j++)
+//         {
+//            for (int t = j+1; t < array.GetLength(1); j++)
+//            {
+//             if (array [i,t]> array [i,j])
+//             {
+//                 int temp = array[i,j];
+//                 array[i,j] = array [i,t];
+//                 array [i,t] = temp;
+//             }
+//            }
+//         }
+//     }
+// }
+
+// Console.Write("Введите количество строк массива: ");
+// int rows = int.Parse(Console.ReadLine());
+// Console.Write("Введите количество столбцов массива: ");
+// int columns = int.Parse(Console.ReadLine());
+// int[,] array = GetArray(rows, columns, 0, 10);
+// PrintArray(array);
+// SortArray(array);
+// Console.WriteLine();
